@@ -1,7 +1,7 @@
 <template>
 	<div class="container">
 		<div class="card">
-			<h1>Список дел</h1>
+			<h1>Todo List</h1>
 
 			<div class="form">
 				<div class="form-control">
@@ -36,10 +36,10 @@ export default {
 		this.loadTodosLocal()
 	},
 	computed: {
-		...mapState(['todos'])
+		...mapState('dataBase', ['todos']),
 	},
 	methods: {
-		...mapActions(['loadTodos', 'todoCompleted', 'todoDelete', 'addTodo']),
+		...mapActions('dataBase', ['loadTodos', 'todoCompleted', 'todoDelete', 'addTodo']),
 
 		loadTodosLocal() {
 			this.loadTodos()
